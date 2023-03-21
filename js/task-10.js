@@ -1,4 +1,4 @@
-let boxesRef = document.querySelector('#boxes');
+const boxesRef = document.querySelector('#boxes');
 const inputRef = document.querySelector('input'); 
 const createRef = document.querySelector('button[data-create]');
 const destroyRef = document.querySelector('button[data-destroy]');
@@ -19,9 +19,7 @@ function createBoxes (amount) {
 }
 
 function onClickDestroy(event) {
-  boxesRef.remove();
-  document.body.insertAdjacentHTML('beforeend', `<div id="boxes"></div>`);
-  boxesRef = document.querySelector('#boxes');
+  boxesRef.innerHTML = '';
 }
 
 function getRandomHexColor() {
